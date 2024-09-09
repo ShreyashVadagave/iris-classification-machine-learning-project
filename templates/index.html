@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iris Classifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+      margin-bottom: 30px;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    input[type="text"], button {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .iris-image {
+      display: block;
+      max-width: 200px;
+      height: auto;
+      margin: 40px auto;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Iris Flower Classifier</h1>
+    <form action="/predict" method="post">
+      <input type="text" name="sepal_length" placeholder="Sepal Length" required>
+      <input type="text" name="sepal_width" placeholder="Sepal Width" required>
+      <input type="text" name="petal_length" placeholder="Petal Length" required>
+      <input type="text" name="petal_width" placeholder="Petal Width" required>
+      <button type="submit">Predict</button>
+    </form>
+    <img src="{{ image }}" alt="{{ species }}" class="iris-image">
+  </div>
+</body>
+</html>
